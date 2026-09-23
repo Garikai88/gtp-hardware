@@ -1,0 +1,232 @@
+/* Centres content and keeps a consistent side gutter */
+.container {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+}
+
+/* hidden until fcused by a keyboard user */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+}
+
+.skip-link:focus {
+    position: fixed;
+    left: var(--gutter);
+    top: 8px;
+    z-index: 100;
+    background: var(--color-surface);
+    color: var(--navy);
+    padding: 10px 16px;
+    border-radius: var(--radius);
+}
+
+/* ===========================================================================
+TOP BAR
+Thin strip above the header. Flex, spread to the edges, wraps if it ever runs out of room (long hours + long emial on a narrow tablet).
+======================================================================================================================================= */
+
+.topbar {
+    background: var(--navy-deep);
+}
+
+.topbar__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    justify-content: space-between;
+    align-items: center;
+    min-height: 38px;
+    padding-block: var(--space-1);
+}
+
+/* =================================================================
+SITE HEADER
+Sticky, so it's reachable while scrolling a long page, flex handles the logo/ nav/ cta/ burger row; nav itself is styled in components.css
+============================================================================================================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy);
+    border-bottom: 3px solid var(--color-action);
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    min-height: 74px;
+}
+
+/* Nav sits between the logo and the CTA, and takes whatever space is lefft*/
+.site-header__inner .nav {
+    margin-inline-start: auto;
+}
+
+/* ==================================================================================================================================================
+HERO
+Dark band, generous top/bottom padding. Everything inside is styled by components.css (tabs, panels) - this file only sets the ban itself.
+===================================================================================================================================================== */
+
+.hero {
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navt-deep) 100%);
+    color: var(--white);
+    padding-block: var(--space-6) var(--space-6);
+}
+
+.hero__title {
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    max-width: 17ch;
+    margin-bottom: var(--space-3);
+    color: var(--white);
+}
+
+.hero__lede {
+    color: B9CFE4;
+    font-size: var(--text-lg);
+    max-width: 56ch;
+    margin-bottom: var(--space-5);
+}
+
+/* ==============================================================================================================================================================
+SECTION RYTHM 
+Every content block on the page is a `.section`, so vertical spacing stays consistent without repeating a padding value forty times.
+`.section-surafce` and `.section-dark` are the only two variants -
+everything else inherits the page background.
+================================================================================================================================================================== */
+
+.section {
+    padding-block: var(--space-7);
+}
+
+.section-surafce {
+    background:var(--color-surface);
+    border-block: 1px solid var(--color-border);
+}
+
+.section--dark {
+    background: var(--navy);
+    color: var(--white);
+}
+
+.section--dark h2 {color: var(--white);}
+.section--dark .lede { color:B9CFE4; }
+
+.section__head {
+    max-width: 60ch;
+    margin-bottom: var(--space-5);
+}
+
+.section__head h2 {margin-bottom: var(--space-3); }
+
+.lede {
+    font-size: var(--text-lg);
+    color: var(--color-text-soft);
+    max-width: 62ch;
+}
+
+/* ==========================================================================================================
+TWO-COLUMN LAYOUTS 
+`.split` - trade accounts: pitch beside a checklist.
+`.contact` - qoute frm beside the info panel. Different ratios,
+same idea, so they stay as two small clases rather than one generic grid utility
+that would need overriding every time.
+============================================================================================================== */
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    align-items: center;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: var(--space-6);
+    align-items: start;
+}
+
+
+/* ======================================================================================================================
+SERVICES / STEPS GRIDS
+Three services cards, four process steps. Both collapse in responsive.css - this file only sets the desktop column count.
+========================================================================================================================= */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+}
+
+/* ==============================================================================================================================
+STAT STRIP
+Full-bleed band, four equal columns.
+================================================================================================================================= */
+
+.stats {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-1);
+}
+
+/* =======================================================================================================================================
+SITE FOOTER
+Four columns: brand, then three link lists. `.site-footer__brand` gets
+double width via the grid template rather tahn col-span, so it still collapses cleanly to a single column on narrow screen.
+========================================================================================================================================== */
+
+.site-footer {
+    background: var(--navy-deep);
+    color: #A9C0D6;
+    padding-block: var(--space-6) var(--space-4);
+}
+
+.site-footer__grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: var(--space-5);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.site-footer__legal {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding-top: var(--space-3);
+    font-size: var(--text-sm);
+}
+
+/* ===============================================================================================================================================
+PAGE HEAD
+The plain title band used st the top of every secondary page
+(about, services, products, etc.) instead of the homepage hero.
+================================================================================================================================================== */
+
+.page-head {
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: var(--white);
+    padding-block: var(--space-6);
+}
+
+.page-head h1 { color: var(--white); margin-bottom: var(--space-2); }
+.page-head .lede { color: #B9CFE4; }
+

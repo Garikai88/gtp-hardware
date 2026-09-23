@@ -1,0 +1,553 @@
+/* ======================================================================================
+components.css - reusable pieces: buttons, cards, tabs, forms, lists
+=========================================================================================
+
+/* ======================================================================================
+BUTTON
+One base class plus one modifier. If a second button style is ever needed (outline. ghost) it becomes `.btn--outline`, not a new component.
+============================================================================================================================================ */
+
+.btn {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--text-base);
+    text-decoration: none;
+    border: 0;
+    border-radius: var(--radius);
+    padding: 0.85em 1.5em;
+    cursor: pointer;
+    transition: background-color var(--transition);
+}
+
+.btn--accent {
+    background: var(--color-action);
+    color: var(--white);
+}
+
+.btn--accent:hover,
+.btn-accent:focus-visible {
+    background: var(--orange-dark);
+}
+
+/* =================================================================================================================
+BRAND (logo + name, top left of the header)
+==================================================================================================================== */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+}
+
+.brand__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.brand__name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.22rem;
+    letter-spacing: -0.025em;
+    color: var(--white);
+}
+
+.brand__tagline {
+    font-size: 0.66em;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: #9FC0DE;
+}
+
+/* =========================================================================================================
+PRIMARY NAV
+Desktop: a plain horizontal lsit. Everything about the *mobile* version
+(the dropdown panel, the open/close state) lives in responsive.css
+this block only has to work for a row of links on a wide screen.
+============================================================================================================ */
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.nav__link {
+    color: #DDE8F2;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding-block: 6px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav__link:hover,
+.nav__link:focus-visible {
+    color: var(--white);
+    border-bottom-color: var(--color-action);
+}
+
+.nav__link--active {
+    color: var(--white);
+    border-bottom-color: var(--color-action);
+}
+
+/* The CTA button in the header needs a smaller footprint that a normal .btn */
+.site-header__cta {
+    padding: 11px 20px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+} 
+
+/* ====================================================================================
+NAV TOGGLE (hamburger)
+Hidden on the desktop by the responsive.cs. Three <span> bars, laid out here;
+the x-transform on open is also handled in responsive.css alongside the breakpoint that make this button visible
+in the first place.
+================================================================================================================== */
+
+.nav-toggle {
+    display: none; /* Shown only below the nav breakpoint - see response.css */
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 38px;
+    height: 34px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.nav-toggle__bar {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--white);
+    margin-inline: auto;
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+/* =============================================================================================================================
+TRADE TABS + PANEL ( hero section )
+Buttons are pain - the "selected" look comes entirely from the 
+aria-selected attribute, so the visual state can never drift out of
+sync with the accessible state (tabs.js only ever toggles that attribute).
+================================================================================================================================ */
+
+.tabs {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-5);
+}
+
+.tabs__btn {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.07);
+    color: #CFE0EF;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: var(--radius);
+    padding: 11px 18px;
+    cursor: pointer;
+    transition: background-color var(--transition), color var(--trasition);
+}
+
+.tabs__btn:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: var(--white);
+}
+
+.tabs__btn[aria-selected="true"] {
+    background: var(--color-action);
+    border-color: var(--color-action);
+    color: var(--white);
+}
+
+.panel {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: var(--space-5);
+    align-items: start;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: var(--space-4);
+}
+
+.panel__intro h2 {
+    font-size: var(--text-xl);
+    color: var(--white);
+    margin-bottom: var(--space-2);
+}
+
+.panel__intro p {
+    color: #B9CFE4;
+    max-width: 48ch;
+    margin-bottom: var(--space-3);
+}
+
+.spec-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.spec-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-3);
+    padding-block: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    font-size: 0.96rem;
+    color: #E4EEF7;
+}
+
+.spec-list__meta {
+    flex-shrink: 0;
+    color: #7E9DBB;
+    font-size: 0.8rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ======================================================================================
+SATS STRIP
+======================================================================================== */
+
+.stat {
+    padding: var(--space-4) var(--space-3) var(--space-4) 0;
+}
+
+.stat__figure {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.stat__label {
+    display: block;
+    color: #CFE5FA;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    max-width: 22ch;
+}
+
+/* ==========================================================================================
+SERVICE CARDS
+Each card gets a coloured top border keyes to its trade - blue for 
+plumbing, orange for electrical, navy for nstallation - echoing the
+logo's colour split without repeating in icon for each one.
+============================================================================================= */
+
+.service-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-top: 4px solid var(--blue);
+    padding: var(--space-4);
+}
+
+.service-card:nth-child(2) { border-top-color: var(--color-action);}
+.service-card:nth-child(3) { border-top-color: var(--navy);}
+
+.service-card h3 { margin-bottom: var(--space-2);}
+.service-card > p {
+    color: var(--color-text-soft);
+    font-size: 0.96rem;
+    margin-bottom: var(--space-3);
+}
+
+.service-card ul {
+    padding-left: 18px;
+    list-style: disc;
+    color: var(--color-text-soft);
+    font-size: 0.95rem;
+}
+
+.service-card li { margin-bottom: 5px;}
+
+
+/* =======================================================================================
+PROCESS STEPS
+Numbered with CSS counters rather than typed digits, so reordering,
+adding, or removing a step in the HTML never leaves a "3, 3, 4" typo
+==========================================================================================*/
+
+.steps {
+    counter-reset: step;
+    list-style: none;
+}
+
+.step {
+    counter-increment: step;
+    position: relative;
+    padding-top: 52px;
+}
+
+.step::before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--color-action);
+    letter-spacing: -.03em;
+}
+
+.step::after {
+    content: "";
+    position: absolute;
+    top: 36px;
+    left: 0;
+    width: 34px;
+    height: 3px;
+    background: var(--navy);
+}
+
+.step h3 { margin-bottom: var(--space-2);}
+.step p {
+    color: var(--color-text-soft);
+    font-size: 0.94rem;
+}
+
+/* =================================================================================================
+CHECK LIST (trade accounts section) 
+A custom checkmark drwan with a rotated border rather than an icon 
+font or an SVG, so it's two CSS lines and never a muissing-glyph box.
+===================================================================================================*/
+
+.check-list {
+    list-style: none;
+}
+
+.check-list li {
+    position: relative;
+    padding: 14px 0 14px 34px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    color: #DCE8F3;
+    font-size: 0.98rem;
+}
+
+.check-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 16px;
+    height: 9px;
+    border-left: 3px solid var(--color-action);
+    border-bottom: 3px solid var(--color-action);
+    transform: rotate(-45deg);
+}
+
+/* ======================================================================================================
+QOUTE FORM
+Labels above inputs (never placeholder-as-label - placeholders vanish
+on focus and fail accessibility). `.field-row` is a 2-up grid that responsive.css collapses to one column
+phones.
+=========================================================================================================*/
+
+.field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+
+.field { margin-bottom: var(--space-3);}
+.field-row .field { margin-bottom: 0;}
+
+label {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.83rem;
+    color: var(--color-text);
+    margin-bottom: 6px;
+}
+
+input,
+select, 
+textarea {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 12px 13px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--blue);
+    outline: 2px solid rgba(30, 133, 192, 0.25);
+    outline-offset: 0;
+}
+
+textarea { min-height: 120px; resize: vertical;}
+
+.form-note {
+    font-size: 0.85rem;
+    color: var(--color-text-soft);
+    margin-top: var(--space-3);
+}
+
+/* Set by form.js when validation fails - see j/form.js */
+.form-note--error { color: #c0392b;}
+
+/* ===========================================================================================
+CONTACT INFO LIST (the <dl> beside the qoute form)
+============================================================================================= */
+
+.info-list {
+    border-left: 3px solid var(--color-action);
+    padding-left: var(--space-4);
+}
+
+.info-list dt {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--color-text-soft);
+    margin-top: var(--space-4);
+}
+
+.info-list dt:first-child { margin-top: 0;}
+.info-list dd {
+    margin-top: 3px;
+    font-size: 1.04rem;
+}
+
+.info-list dd a {
+    text-decoration: none;
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+.info-list dd a:hover { text-decoration:underline;}
+
+/* ==========================================================================================================
+GALLERY ITEMS
+figure/figcaption is the correct semantic pairing for an image with a caption - screen readers announce them together as one unit.
+================================================================================================================================== */
+
+.gallery__item {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--navy-deep);
+}
+
+.gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    display: block;
+    transition: transform var(--transition);
+}
+
+.gallery__item--wide img { aspect-ratio: 16/9;}
+.gallery__item:hover img { transform: scale(1.04); }
+
+.gallery__item figcaption {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    padding: 10px 14px;
+    background: linear-gradient(0deg, rgba(10, 30, 51, 0.85), transparent);
+    color: var(--white);
+    font-size: 0.83rem;
+    font-weight: 500;
+}
+
+/* ===============================================================================
+MAP EMBED (contact section)
+The padding-top percentage trick keeps the iframe at fixed 4:3 ratio
+at any container width, without JS ad without a fixed pixel height that 
+would look wrong on some screens.
+================================================================================= */
+
+.map-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* 4:3 */
+    margin-top: var(--space-4);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+}
+
+.map-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.map-embed__link:hover {text-decoration: underline;}
+
+.site-footer__logo {
+    width: 230px;
+    background: var(--white);
+    padding: 14px 16px;
+    border-radius: 4px;
+    margin-bottom: var(--space-3);
+}
+
+.site-footer h3 {
+    color: var(--white);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-3);
+}
+
+.site-footer ul { list-style: none;}
+.site-footer li { margin-bottom: 8px;}
+.site-footer a { text-decoration: none;}
+.site-footer a:hover { color: var(--white); text-decoration: underline;}
+
+/* Icons are inline SVG with the class="icon" - colour and size are set here,
+never on the SVG markup itself, so a palette change is a one-line edit */
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: var(--space-3);
+    list-style: none;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #A9C0D6;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+    background: var(--color-action);
+    color: var(--white);
+}
+
+.social-links .icon {
+    width: 17px;
+    height: 17px;
+}
+
