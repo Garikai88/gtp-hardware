@@ -1,0 +1,182 @@
+/*===================================================================================================
+responsive.css - breakpoint overrides. Loaded LAST so it always wins.
+Mobile-first: base styles (variables/layout/components) are written for
+a wide screen, and this file only overrides what needs to change going down.
+Two breakpoints, matching the two real shapes this site takes:
+ 900px - tablet: the nav becomes a dropdown, wide grids drop a column
+ 560px - phone: everything still standing goes to one column
+======================================================================================================*/
+
+
+/*=====================================================================================================
+900px - TABLET
+=======================================================================================================*/
+
+@media (max-width: 900px) {
+    /* --- Header: hide the desktop nav + CTA, show the hamburger ---- */
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .site-header__cta { 
+        display: none;
+    }
+
+    .nav-toggle {
+        display: flex;
+        margin-inline-start: auto; /* nav's auto-margin is gone now it's hidden */
+    }
+
+    /* Ensure hamburger bars animate smoothly */
+    .nav-toggle__bar {
+        transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+    }
+
+    /* The open nav becomes a full-width dropdown panel anchored to the 
+    header (which is already `position: sticky`, so it's the nearest positioned
+    ancestor - no extra wrapper needed). */
+    .nav.nav--open {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--navy-deep);
+        border-bottom: 3px solid var(--color-action);
+        padding: 6px var(--gutter) 18px;
+        z-index: 101;
+    }
+
+    .nav--open .nav__list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .nav--open .nav__link {
+        padding-block: 14px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hamburger -> X, driven by the button's own aria-expanded - set by 
+    nav.js - so the icon can never fall out of sync with the real state. */
+    .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* --- Hero: tabs panel drops from two columns to one --- */
+    .panel {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Grids that are too tight for 3-4 columns at tablet width --- */
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* --- Two-column sections stack --- */
+    .split,
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .contact .contact__info {
+        order: -1; /* show contact details before the long form on a stacked layout */
+    }
+
+    /* --- Footer: brand column no longer needs double width --- */
+    .site-footer__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .site-footer__brand {
+        grid-column: span 2;
+    }
+}
+
+
+/* ===========================================================================================
+560px - PHONE
+=============================================================================================*/
+
+@media (max-width: 560px) {
+    /* --- Tighten the section rhythm; --space-7 is generous for a phone --- */
+    .section {
+        padding-block: var(--space-6);
+    }
+
+    .hero {
+        padding-block: var(--space-5);
+    }
+
+    .page-head {
+        padding-block: var(--space-5);
+    }
+
+    /* --- Quote form: one field per row instead of two --- */
+    .field-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Every remaining multi-column grid finishes at one column --- */
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer__brand {
+        grid-column: span 1;
+    }
+
+    /* --- Info list loses its left rule + indent; it reads fine flush-left
+    once the page is a single narrow column --- */
+    .info-list {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    /* --- Header: give the logo room to wrap instead of crowding the toggle --- */
+    .brand__tagline {
+        display: none;
+    }
+    
+    /* --- Top bar: hours and contact stack instead of squeezing side by side --- */
+    .topbar__inner {
+        flex-direction: column;
+        gap: 4px;
+        justify-content: center;
+        text-align: center;
+    } 
+
+    /* --- Footer legal line stacks instead of spreading edge to edge --- */
+    .site-footer__legal {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
