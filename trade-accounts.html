@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trade Accounts &amp; Contractor Pricing | GTP Hardware</title>
+  <meta name="description" content="Apply for a GTP Hardware trade account to access credit terms, priority stock reservations, and dedicated volume pricing for contractors in Harare.">
+
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/logo-mark.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p class="topbar__hours">Mon–Fri 7:30am–5pm · Sat 8am–1pm</p>
+      <p class="topbar__contact">
+        <a href="tel:+263778292664">+263 77 829 2664</a>
+        <a href="mailto:gtpsales@gmail.com">gtpsales@gmail.com</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__mark" src="assets/img/logo-mark.png" alt="" width="44" height="46">
+        <span class="brand__text">
+          <span class="brand__name">GTP Hardware</span>
+          <span class="brand__tagline">Plumbing · Electrical · Installation</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="services.html">Services</a></li>
+          <li><a class="nav__link" href="products.html">Products</a></li>
+          <li><a class="nav__link" href="projects.html">Projects</a></li>
+          <li><a class="nav__link nav__link--active" href="trade-accounts.html" aria-current="page">Trade accounts</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--accent site-header__cta" href="contact.html">Request a quote</a>
+
+      <button class="nav-toggle" id="nav-toggle" type="button"
+              aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- PAGE HEAD -->
+    <section class="page-head">
+      <div class="container">
+        <h1>Trade Accounts &amp; Contractor Benefits</h1>
+        <p class="lede">Streamline your material sourcing, lock in volume discounts, and simplify job site deliveries across Harare.</p>
+      </div>
+    </section>
+
+    <!-- BENEFITS GRID -->
+    <section class="section">
+      <div class="container">
+        
+        <div class="section__head">
+          <h2>Why Register as a Trade Partner?</h2>
+          <p class="lede">Tailored support designed for independent contractors, electricians, plumbers, and property developers.</p>
+        </div>
+
+        <div class="grid grid--3-col">
+          
+          <article class="card">
+            <div class="card__body">
+              <h3 class="card__title">Discounted Pricing</h3>
+              <p class="card__text">Enjoy wholesale-tier pricing across our entire catalogue of plumbing, electrical, and solar installation materials.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__body">
+              <h3 class="card__title">Priority Stock Holding</h3>
+              <p class="card__text">Reserve high-demand line items for your upcoming site schedules so your crews never face costly downtime.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__body">
+              <h3 class="card__title">Dedicated Account Support</h3>
+              <p class="card__text">Get fast-tracked quotes on complex Bills of Quantities directly through a single point of contact via phone or WhatsApp.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRADE APPLICATION FORM -->
+    <section class="section section--dark">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <h2>Apply for a Trade Account</h2>
+          <p class="lede">Fill in your business details below to get registered with GTP Hardware.</p>
+        </div>
+
+        <form class="form" name="trade-account-form" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="trade-account-form">
+
+          
+          <div class="form__group">
+            <label for="trade-name" class="form__label">Contact Name</label>
+            <input type="text" id="trade-name" name="name" class="form__input" required>
+          </div>
+
+          <div class="form__group">
+            <label for="company-name" class="form__label">Company / Business Name</label>
+            <input type="text" id="company-name" name="company" class="form__input" required>
+          </div>
+
+          <div class="form__group">
+            <label for="trade-phone" class="form__label">Phone / WhatsApp Number</label>
+            <input type="tel" id="trade-phone" name="phone" class="form__input" required>
+          </div>
+
+          <div class="form__group">
+            <label for="trade-email" class="form__label">Email Address</label>
+            <input type="email" id="trade-email" name="email" class="form__input" required>
+          </div>
+
+          <div class="form__group">
+            <label for="trade-type" class="form__label">Primary Sector</label>
+            <select id="trade-type" name="sector" class="form__input">
+              <option value="plumbing">Plumbing Contractor</option>
+              <option value="electrical">Electrical Contractor</option>
+              <option value="solar">Solar / Renewable Energy</option>
+              <option value="builder">General Builder / Developer</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn--accent btn--full">Submit Application</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="site-footer__brand">
+          <img class="site-footer__logo" src="assets/img/logo-full.png"
+               alt="GTP Hardware — Plumbing, Electrical, Installation" width="230">
+          <p>Materials and qualified installation for homes, landlords and builders in Harare.</p>
+          <ul class="social-links">
+            <li>
+              <a href="https://facebook.com/gtphardware" target="_blank" rel="noopener" aria-label="GTP Hardware on Facebook">
+                <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path fill="currentColor" d="M22 12.06C22 6.505 17.523 2 12 2S2 6.505 2 12.06c0 5.02 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.878h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.92 8.437-9.94Z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/gtphardware" target="_blank" rel="noopener" aria-label="GTP Hardware on Instagram">
+                <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.43.4.55.2 1.06.53 1.48.96.42.42.75.93.96 1.48.16.46.35 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.4 2.43-.21.58-.55 1.1-.96 1.48-.42.42-.93.75-1.48.96-.46.16-1.26.35-2.43.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.15 4.15 0 0 1-1.48-.96 4.15 4.15 0 0 1-.96-1.48c-.16-.46-.35-1.26-.4-2.43-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.97.4-2.43.21-.58.55-1.1.96-1.48.42-.42.93-.75 1.48-.96.46-.16 1.26-.35 2.43-.4 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.92.55a6.3 6.3 0 0 0-2.28 1.48A6.3 6.3 0 0 0 .37 4.38c-.29.77-.49 1.64-.55 2.92C-.24 8.58-.26 8.99-.26 12s.02 3.42.08 4.7c.06 1.28.26 2.15.55 2.92a6.3 6.3 0 0 0 1.48 2.28 6.3 6.3 0 0 0 2.28 1.48c.77.29 1.64.49 2.92.55 1.28.06 1.69.08 4.7.08s3.42-.02 4.7-.08c1.28-.06 2.15-.26 2.92-.55a6.3 6.3 0 0 0 2.28-1.48 6.3 6.3 0 0 0 1.48-2.28c.29-.77.49-1.64.55-2.92.06-1.28.08-1.69.08-4.7s-.02-3.42-.08-4.7c-.06-1.28-.26-2.15-.55-2.92a6.3 6.3 0 0 0-1.48-2.28A6.3 6.3 0 0 0 19.62.62c-.77-.29-1.64-.49-2.92-.55C15.42.01 15.01 0 12 0Zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84Zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.41-10.85a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0Z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/263778292664" target="_blank" rel="noopener" aria-label="Message GTP Hardware on WhatsApp">
+                <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                  <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.83.5 3.53 1.36 5L2 22l5.25-1.46a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.12h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.87.84-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.4c0-4.53 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.42a8.17 8.17 0 0 1 2.41 5.82c0 4.54-3.7 8.2-8.24 8.2Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.22a7.5 7.5 0 0 1-1.38-1.71c-.15-.24-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.77-1.84-.2-.48-.4-.42-.56-.42h-.48c-.16 0-.42.06-.64.31-.22.24-.85.83-.85 2.02s.87 2.35.99 2.51c.12.16 1.71 2.6 4.14 3.65.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.28Z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Pages</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="trade-accounts.html">Trade accounts</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Services</h3>
+          <ul>
+            <li><a href="services/services-plumbing.html">Plumbing</a></li>
+            <li><a href="services/services-electrical.html">Electrical</a></li>
+            <li><a href="services/services-installation.html">Installation</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Get in touch</h3>
+          <ul>
+            <li><a href="tel:+263778292664">+263 77 829 2664</a></li>
+            <li><a href="https://wa.me/263778292664" target="_blank" rel="noopener">WhatsApp us</a></li>
+            <li><a href="mailto:gtpsales@gmail.com">gtpsales@gmail.com</a></li>
+            <li>123 Example Road, Msasa, Harare</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="site-footer__legal">
+        <p>&copy; 2026 GTP Hardware. All rights reserved.</p>
+        <p>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js" defer></script>
+</body>
+</html>

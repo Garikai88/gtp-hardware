@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GTP Hardware — Plumbing, Electrical & Installation | Harare</title>
   <meta name="description" content="GTP Hardware supplies plumbing and electrical materials in Harare and installs them with qualified teams.">
-  <!-- NOTE: contact details below updated from a pasted draft — verify these are correct:
-       phone +263 77 829 2664, email gtpsales@gmail.com -->
 
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="apple-touch-icon" href="assets/img/logo-mark.png">
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -26,6 +26,7 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- TOPBAR -->
   <div class="topbar">
     <div class="container topbar__inner">
       <p class="topbar__hours">Mon–Fri 7:30am–5pm · Sat 8am–1pm</p>
@@ -36,6 +37,7 @@
     </div>
   </div>
 
+  <!-- SITE HEADER -->
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="index.html">
@@ -71,6 +73,7 @@
 
   <main id="main">
 
+    <!-- HERO SECTION WITH TABS -->
     <section class="hero">
       <div class="container">
         <h1 class="hero__title">The counter, the materials and the team that fits them.</h1>
@@ -80,7 +83,7 @@
         </p>
 
         <div class="tabs" role="tablist" aria-label="Choose a trade">
-          <button class="tabs__btn" role="tab" id="tab-plumbing"
+          <button class="tabs__btn tab--active" role="tab" id="tab-plumbing"
                   aria-controls="panel-plumbing" aria-selected="true">Plumbing</button>
           <button class="tabs__btn" role="tab" id="tab-electrical"
                   aria-controls="panel-electrical" aria-selected="false">Electrical</button>
@@ -88,7 +91,7 @@
                   aria-controls="panel-installation" aria-selected="false">Installation</button>
         </div>
 
-        <div class="panel" role="tabpanel" id="panel-plumbing" aria-labelledby="tab-plumbing">
+        <div class="panel panel--active" role="tabpanel" id="panel-plumbing" aria-labelledby="tab-plumbing">
           <div class="panel__intro">
             <h2>Pipe, fittings and fixtures that hold pressure</h2>
             <p>PPR, copper and PVC in the sizes builders actually ask for, plus geysers, pumps and sanitaryware.</p>
@@ -132,6 +135,7 @@
       </div>
     </section>
 
+    <!-- STATS STRIP -->
     <section class="stats" aria-label="Business at a glance">
       <div class="container stats__grid">
         <div class="stat"><b class="stat__figure">12+</b><span class="stat__label">Years supplying builders and homeowners in Harare</span></div>
@@ -141,6 +145,7 @@
       </div>
     </section>
 
+    <!-- SERVICES OVERVIEW -->
     <section class="section" id="stock">
       <div class="container">
         <header class="section__head">
@@ -185,6 +190,7 @@
       </div>
     </section>
 
+    <!-- PROCESS SECTION -->
     <section class="section section--surface" id="process">
       <div class="container">
         <header class="section__head">
@@ -213,12 +219,13 @@
       </div>
     </section>
 
+    <!-- TRADE ACCOUNTS -->
     <section class="section section--dark" id="trade">
       <div class="container split">
         <div>
           <h2>Trade accounts for builders and property managers</h2>
           <p class="lede">Priority pricing, one monthly statement, and a person who knows your sites.</p>
-          <a class="btn btn--accent" href="contact.html">Open a trade account</a>
+          <a class="btn btn--accent" href="trade-accounts.html">Open a trade account</a>
         </div>
         <ul class="check-list">
           <li>Tiered pricing by monthly volume</li>
@@ -230,6 +237,7 @@
       </div>
     </section>
 
+    <!-- CONTACT & QUOTE SECTION -->
     <section class="section" id="contact">
       <div class="container contact">
 
@@ -239,7 +247,7 @@
             <p class="lede">Tell us what the job is. If you have a materials list, paste it in and we price it line by line.</p>
           </header>
 
-          <form class="quote-form" id="quote-form" novalidate>
+          <form class="contact-form quote-form" id="quote-form" novalidate>
             <div class="field-row">
               <div class="field">
                 <label for="name">Your name</label>
@@ -290,7 +298,7 @@
             <dd><a href="tel:+263778292664">+263 77 829 2664</a></dd>
 
             <dt>WhatsApp</dt>
-            <dd><a href="https://wa.me/263778292664">Send a photo of the problem</a></dd>
+            <dd><a href="https://wa.me/263778292664" target="_blank" rel="noopener">Send a photo of the problem</a></dd>
 
             <dt>Email</dt>
             <dd><a href="mailto:gtpsales@gmail.com">gtpsales@gmail.com</a></dd>
@@ -305,6 +313,7 @@
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <div class="site-footer__grid">
@@ -352,9 +361,9 @@
         <div>
           <h3>Services</h3>
           <ul>
-            <li><a href="services-plumbing.html">Plumbing</a></li>
-            <li><a href="services-electrical.html">Electrical</a></li>
-            <li><a href="services-installation.html">Installation</a></li>
+            <li><a href="services/services-plumbing.html">Plumbing</a></li>
+            <li><a href="services/services-electrical.html">Electrical</a></li>
+            <li><a href="services/services-installation.html">Installation</a></li>
           </ul>
         </div>
 
@@ -362,7 +371,7 @@
           <h3>Get in touch</h3>
           <ul>
             <li><a href="tel:+263778292664">+263 77 829 2664</a></li>
-            <li><a href="https://wa.me/263778292664">WhatsApp us</a></li>
+            <li><a href="https://wa.me/263778292664" target="_blank" rel="noopener">WhatsApp us</a></li>
             <li><a href="mailto:gtpsales@gmail.com">gtpsales@gmail.com</a></li>
             <li>123 Example Road, Msasa, Harare</li>
           </ul>
@@ -383,6 +392,6 @@
   <script src="js/nav.js" defer></script>
   <script src="js/tabs.js" defer></script>
   <script src="js/form.js" defer></script>
-  <script src="js/main.js" defer></script>
 </body>
 </html>
+
